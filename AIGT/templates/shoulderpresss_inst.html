@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoulders Workout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+
+        .jumbotron {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .exercise-card {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+      background-image: url("{% static 'assets/img/bg1.jpg' %}");
+      background-repeat: repeat;
+      background-size: cover;
+      color: #626568;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/shoulder_feed" style="display: inline-block; padding: 10px 20px; background-color: orange; color: white; text-decoration: none; transition: background-color 0.3s ease;">Start Exercise</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#instructions">Instructions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#video">Video</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Shoulders Workout</h1>
+            <p class="lead">Get those Shoulders in shape with our effective workout routine.</p>
+        </div>
+    </div>
+    <div class="container" id="video">
+      <h2>Video</h2>
+      <div class="video-container">
+          <iframe width="560" height="315" src="{% static 'assets/img/shoulderpresses_inst.mp4' %}" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    <div class="container" id="instructions">
+        <h2>Instructions</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <img src="{% static 'assets/img/shoulderpress.gif' %}" class="card-img-top" alt="Biceps Exercise 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Visual</h5>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Instructions</h5>
+                        <p class="card-text">Begin by standing with your feet shoulder-width apart and hold a dumbbell in each hand at shoulder level, palms facing forward. Alternatively, you can use a barbell and hold it at shoulder level with an overhand grip.
+                            Engage your core muscles and maintain a neutral spine. Press the weights upward by extending your arms, keeping your elbows slightly bent throughout the movement.
+                            As you press the weights overhead, exhale and fully extend your arms without locking out your elbows. Keep your wrists straight and maintain control of the weights.
+                            Pause briefly at the top position, ensuring that the weights are directly above your shoulders and in line with your ears.
+                            Lower the weights back down to shoulder level in a controlled manner, inhaling as you do so. Repeat the shoulder press motion, focusing on proper form and avoiding any excessive leaning or arching of your back. Gradually increase the weight or number of repetitions as your strength improves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

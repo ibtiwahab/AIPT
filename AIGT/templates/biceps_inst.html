@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biceps Workout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+
+        .jumbotron {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .exercise-card {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+      background-image: url("{% static 'assets/img/bg1.jpg' %}");
+      background-repeat: repeat;
+      background-size: cover;
+      color: #626568;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/biceps_feed" style="display: inline-block; padding: 10px 20px; background-color: orange; color: white; text-decoration: none; transition: background-color 0.3s ease;">Start Exercise</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#instructions">Instructions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#video">Video</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Biceps Workout</h1>
+            <p class="lead">Get those biceps in shape with our effective workout routine.</p>
+        </div>
+    </div>
+    <div class="container" id="video">
+      <h2>Video</h2>
+      <div class="video-container">
+          <iframe width="560" height="315" src="{% static 'assets/img/biceps_inst.mp4' %}" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+    <div class="container" id="instructions">
+        <h2>Instructions</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <img src="{% static 'assets/img/biceps.gif' %}" class="card-img-top" alt="Biceps Exercise 1">
+                    <div class="card-body">
+                        
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Instructions</h5>
+                        <p class="card-text">Stand with your feet shoulder-width apart, grasping the barbell with an underhand grip (palms facing upward).
+                          Let your arms hang straight down by your sides, keeping your elbows close to your body.
+                          Engage your core and keep your back straight throughout the exercise.
+                          Keeping your upper arms stationary, exhale and slowly curl the barbell upward towards your shoulders by contracting your biceps.
+                          Continue the upward movement until your forearms are vertical and the barbell is at shoulder level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

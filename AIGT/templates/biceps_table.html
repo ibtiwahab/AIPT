@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AIGT - Biceps_table</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-image: url("{% static 'assets/img/bg3.jpg' %}");
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: black;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f5890d;
+        }
+
+        .table thead th {
+            color: #000;
+            background-color: #ff8c00;
+            font-weight: bold;
+        }
+
+        .table tbody td {
+            background-color: transparent;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link scrollto active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scrollto" href="/admin/login">Add blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scrollto" href="/profile">Workout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scrollto" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scrollto" href="/signup">Signin</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Table with Bootstrap Styling -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Biceps Count</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for history in biceps_history %}
+            <tr>
+                <td>{{ history.enrollment.FullName }}</td>
+                <td>{{ history.enrollment.PhoneNumber }}</td>
+                <td>{{ history.biceps_count }}</td>
+                <td>{{ history.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Add Bootstrap JS (optional, required for some features) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% block title %}
+Profile
+{% endblock title %}
+{% block body %}
+<style>
+  /* Add this CSS to remove the gap between navbar and hero content */
+  #hero {
+    margin-top: -350px; /* Adjust the value as needed */
+  }
+</style>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-xl-6 col-lg-8">
+        <h1>GET IN SHAPE WITH AI <span>.</span></h1>
+        <h2>NO PHYSICAL TRAINER REQUIRED </h2>
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+      <div class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="bx bx-shield"></i>
+          <h3><a href="biceps_feed/">Biceps</a></h3>
+          <h3><a href="biceps_inst">Instructions</a></h3>
+          <h4><a href="biceps_table">Reps History</a></h4>
+        </div>
+      </div>
+      <div  class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="bx bx-shield"></i>
+          <h3><a href="triceps_feed/">Side Dumbbell</a></h3>
+          <h3><a href="triceps_inst/">Instructions</a></h3>
+          <h4><a href="triceps_table">Reps History</a></h4>
+        </div>
+      </div>
+      <div class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="bx bx-shield"></i>
+          <h3><a href="shoulder_feed/">Shoulder Press</a></h3>
+          <h3><a href="shoulderpresss_inst/">Instructions</a></h3>
+          <h4><a href="shoulder_table">Reps History</a></h4>
+        </div>
+      </div>
+      <div class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="bx bx-shield"></i>
+          <h3><a href="squat_feed">Squats</a></h3>
+          <h3><a href="squats_inst">Instructions</a></h3>
+          <h4><a href="squat_table">Reps History</a></h4>
+        </div>
+      </div>
+      <div class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="bx bx-shield"></i>
+          <h3><a href="video_feed">Push Ups</a></h3>
+          <h3><a href="pushups_inst">Instructions</a></h3>
+          <h4><a href="pushup_table">Reps History</a></h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Hero -->
+
+
+
+<div class="container">
+
+    <div class="row">
+    
+    <div class="col-md-4">
+      
+    <h1>User Details</h1>
+    {% comment %} Contact Us COde  {% endcomment %}
+    {% for post in posts %}
+    
+   
+    <ul class="list-group">
+        <li class="list-group-item bg-warning text-dark"><h5>Name : {{post.FullName}}</h5></li>
+        <li class="list-group-item bg-warning text-dark"><h5>Email : {{post.Email}}</h5></li>
+        <li class="list-group-item bg-warning text-dark"><h5>Gender : {{post.Gender}}</h5></li>
+        <li class="list-group-item bg-warning text-dark"><h5>PhoneNumber : {{post.PhoneNumber}}</h5></li>
+        <li class="list-group-item bg-warning text-dark"><h5>DOB : {{post.DOB}}</h5></li>
+        
+        <li class="list-group-item bg-warning text-dark"><h5>Address : {{post.Address}}</h5></li>
+       
+       
+        <li class="list-group-item bg-warning text-dark"><h5>Joining date : {{post.timeStamp}}</h5></li>
+      
+       
+      </ul>
+      {% endfor %}
+    
+    
+    
+    
+    </div>
+    
+    <div class="col-md-8">
+
+
+      <div><Center><h2 class="display-4 mt-3"><b>User History</b></h2></Center></div>
+
+  
+      
+      <table class="table">
+        <thead class="thead-warning">
+          <tr>
+          
+            <th scope="col">Date</th>
+            <th scope="col">Login</th>
+            <th scope="col">Logout</th>
+            <th scope="col">Workout</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for attend in attendance %}
+          <tr>
+            
+            <td>{{attend.Selectdate}}</td>
+            <td>{{attend.Login}}</td>
+            <td>{{attend.Logout}}</td>
+            <td>{{attend.SelectWorkout}}</td>
+            
+            
+           
+         
+            
+           
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+
+
+
+
+
+
+{% endblock body %}
